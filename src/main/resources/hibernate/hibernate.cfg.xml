@@ -8,5 +8,6 @@
 
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
+
     </session-factory>
 </hibernate-configuration>
