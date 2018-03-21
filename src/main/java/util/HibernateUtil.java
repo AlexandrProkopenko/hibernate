@@ -19,4 +19,8 @@ public class HibernateUtil {
                 buildMetadata().
                 buildSessionFactory();
     }
+
+    public static SessionFactory getFactory(){
+        return factory;
+    }
 }
