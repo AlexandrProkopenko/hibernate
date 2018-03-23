@@ -54,7 +54,7 @@ public class Car {
                 "id=" + id +
                 ", model='" + model + '\'' +
                 ", number='" + number + '\'' +
-                ", man=" + man +
+                ", man=" + man.getName() +
                 '}';
     }
 }
