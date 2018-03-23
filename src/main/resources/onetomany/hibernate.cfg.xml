@@ -23,8 +23,8 @@
         <!-- трассировка sql запросов в консоль-->
         <property name="hibernate.show_sql">true</property>
 
-        <mapping resource="entity/Simcard.hbn.xml"/>
-        <mapping resource="entity/SimcardBox.hbn.xml"/>
+        <mapping resource="onetomany/entity/Simcard.hbn.xml"/>
+        <mapping resource="onetomany/entity/SimcardBox.hbn.xml"/>
 
     </session-factory>
 </hibernate-configuration>

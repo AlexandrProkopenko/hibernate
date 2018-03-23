@@ -1,4 +1,4 @@
-package util;
+package onetomany.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -13,7 +13,7 @@ public class HibernateUtil {
 
     private static SessionFactory build() {
         registry = new StandardServiceRegistryBuilder().
-                configure("hibernate/hibernate.cfg.xml").
+                configure("onetomany/hibernate.cfg.xml").
                 build();
         return new MetadataSources(registry).
                 buildMetadata().

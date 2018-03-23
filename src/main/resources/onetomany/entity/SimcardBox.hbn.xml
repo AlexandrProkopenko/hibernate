@@ -3,7 +3,7 @@
         PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="entity.SimcardBox" table="simcardBoxs">
+    <class name="onetomany.entity.SimcardBox" table="simcardBoxs">
         <!-- Ключевое поле -->
         <id name="id" type="java.lang.Integer">
            <column name="ID"/>
@@ -17,14 +17,10 @@
         <property name="capacity" type="java.lang.Integer">
             <column name="CAPACITY"/>
         </property>
-    
-        <bag name="simcardList" table="SIMCARD_LIST">
-           <key>
-               <column name="SIMCARD_ID" not-null="true"/>
-           </key>
-            <one-to-many class="entity.SimcardBox"/>
 
-
+        <bag name="simcardList">
+            <key column="BOX_ID"/>
+            <one-to-many class="onetomany.entity.Simcard"/>
         </bag>
 
     </class>

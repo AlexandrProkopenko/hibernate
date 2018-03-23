@@ -1,7 +1,7 @@
-package dao;
+package onetomany.dao;
 
 
-import entity.SimcardBox;
+import onetomany.entity.SimcardBox;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package entity;
+package onetomany.entity;
 
 import java.util.List;
 

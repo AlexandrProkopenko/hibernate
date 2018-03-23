@@ -1,4 +1,4 @@
-package entity;
+package onetomany.entity;
 
 public class Simcard {
 

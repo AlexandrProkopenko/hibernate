@@ -1,9 +1,9 @@
-package dao;
+package onetomany.dao;
 
-import entity.Simcard;
+import onetomany.entity.Simcard;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
-import util.HibernateUtil;
+import onetomany.util.HibernateUtil;
 
 import java.util.List;
 
@@ -25,10 +25,11 @@ public class SimcardDAOImpl implements SimcardDAO {
         } catch (HibernateException exc) {
             exc.printStackTrace();
             session.getTransaction().rollback();
-            return null;
+
         } finally {
             session.close();
         }
+        return null;
     }
 
     public Simcard read(Integer id) {

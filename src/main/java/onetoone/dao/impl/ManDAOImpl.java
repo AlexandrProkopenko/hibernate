@@ -1,28 +1,30 @@
-package dao;
+package onetoone.dao.impl;
 
-import entity.SimcardBox;
+import onetoone.dao.ManDAO;
+import onetoone.entity.Man;
+import onetoone.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import util.HibernateUtil;
 
 import java.util.List;
 
-public class SimcardBoxDAOImpl implements SimcardBoxDAO {
+public class ManDAOImpl implements ManDAO {
 
-    private static SessionFactory factory;
+    private SessionFactory factory;
 
-    public SimcardBoxDAOImpl(){
+    public ManDAOImpl(){
         factory = HibernateUtil.getFactory();
     }
 
-    public Integer create(SimcardBox simcardBox) {
+    public Long create(Man man) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            Integer id = (Integer) session.save(simcardBox);
+            Long id = (Long) session.save(man);
             session.getTransaction().commit();
             return id;
+
         }catch (HibernateException e){
             e.printStackTrace();
             session.getTransaction().rollback();
@@ -33,13 +35,12 @@ public class SimcardBoxDAOImpl implements SimcardBoxDAO {
         return null;
     }
 
-    public SimcardBox read(Integer id) {
+    public Man read(Long id) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            SimcardBox simcardBox;
-            simcardBox = session.get(SimcardBox.class, id);
-            return simcardBox;
+            Man man = session.get(Man.class, id);
+            return man;
         }catch (HibernateException e){
             e.printStackTrace();
             session.getTransaction().rollback();
@@ -50,15 +51,15 @@ public class SimcardBoxDAOImpl implements SimcardBoxDAO {
         return null;
     }
 
-    public boolean update(SimcardBox simcardBox) {
+    public boolean update(Man man) {
         return false;
     }
 
-    public boolean delete(SimcardBox simcardBox) {
+    public boolean delete(Man man) {
         return false;
     }
 
-    public List<SimcardBox> getAll() {
+    public List<Man> getAll() {
         return null;
     }
 }
