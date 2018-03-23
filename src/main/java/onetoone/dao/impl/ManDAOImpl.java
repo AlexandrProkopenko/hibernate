@@ -52,14 +52,54 @@ public class ManDAOImpl implements ManDAO {
     }
 
     public boolean update(Man man) {
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            session.update(man);
+            session.getTransaction().commit();
+            return true;
+        }catch (HibernateException e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }finally {
+            session.close();
+        }
+
+
         return false;
     }
 
     public boolean delete(Man man) {
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            session.delete(man);
+            session.getTransaction().commit();
+            return true;
+        }catch (HibernateException e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }finally {
+            session.close();
+        }
+
+
         return false;
     }
 
     public List<Man> getAll() {
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            List<Man> men = session.createCriteria(Man.class).list();
+            return men;
+        }catch (HibernateException e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }finally {
+            session.close();
+        }
+
         return null;
     }
 }

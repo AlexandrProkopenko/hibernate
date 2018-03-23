@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="onetoone.entity.Car" table="cars">
         <!-- Ключевое поле -->
-        <id name="id" type="java.lang.Integer">
+        <id name="id" type="java.lang.Long">
             <column name="ID"/>
             <generator class="increment"/>
         </id>

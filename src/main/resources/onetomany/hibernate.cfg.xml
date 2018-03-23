@@ -19,7 +19,7 @@
         <!--режим работы фреймворка update
            в этом режиме у нас есть возможность взаимодействовать с БД
             по всем основным операциям получение/изменение/удаление данных-->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <!-- трассировка sql запросов в консоль-->
         <property name="hibernate.show_sql">true</property>
 
