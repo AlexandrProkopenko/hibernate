@@ -1,6 +1,7 @@
 package annotations.onetomany.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,10 +16,10 @@ public class Child {
     @Column(name = "child_name")
     private String name;
 
-    @Column(name="chilg_age")
+    @Column(name="child_age")
     private Integer age;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Toy> toys;
 
     public Child() {
@@ -58,11 +59,17 @@ public class Child {
 
     @Override
     public String toString() {
+
+        List<String > list = new ArrayList<String>();
+        for(Toy toy: toys){
+            list.add(toy.getName());
+        }
+
         return "Child{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", toys=" + toys +
+                ", toys=" + list +
                 '}';
     }
 }

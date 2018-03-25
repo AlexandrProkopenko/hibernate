@@ -12,6 +12,9 @@ public class OneToManyApp {
         EntityDAOImpl<Child> childDAO = new EntityDAOImpl<Child>(Child.class);
         EntityDAOImpl<Toy> toyDAO = new EntityDAOImpl<Toy>(Toy.class);
 
-        System.out.println( childDAO.getById(1L) );
+        for (int i = 1; i <6; i++) {
+            System.out.println( childDAO.getById(new Long(i)) );
+        }
+
     }
 }
