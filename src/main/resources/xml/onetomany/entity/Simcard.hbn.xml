@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+        PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.onetomany.entity.Simcard" table="simcards">
+        <!-- Ключевое поле -->
+        <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="increment"/>
+        </id>
+        <!-- Связываем поля класса-->
+        <property name="operator" type="java.lang.String" length="25">
+            <column name="OPERATOR" length="25"/>
+        </property>
+
+        <property name="number" type="java.lang.Integer">
+            <column name="NUMBER"/>
+        </property>
+
+        <property name="balance" type="java.lang.Double">
+            <column name="BALANCE"/>
+        </property>
+
+        
+        <many-to-one name="box" class="xml.onetomany.entity.SimcardBox">
+            <column name="BOX_ID" not-null="true"></column>
+        </many-to-one>
+
+    </class>
+</hibernate-mapping>
