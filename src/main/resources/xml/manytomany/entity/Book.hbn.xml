@@ -15,8 +15,8 @@
         </property>
 
         <bag name="authors" table="BOOKS_AUTHORS" lazy="false">
-            <key column="author_id"></key>
-            <many-to-many column="book_id" class="xml.manytomany.entity.Book"/>
+            <key column="book_id"></key>
+            <many-to-many column="author_id" class="xml.manytomany.entity.Author"/>
         </bag>
 
     </class>

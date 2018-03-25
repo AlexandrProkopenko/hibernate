@@ -43,10 +43,10 @@ public class Book {
     @Override
     public String toString() {
 
-//        StringBuilder sb = new StringBuilder();
-//        for (Author author: authors) {
-//            sb.append(author.getName() + " ");
-//        }
+        StringBuilder sb = new StringBuilder();
+        for (Author author: authors) {
+            sb.append(author.getName() + " ");
+        }
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +

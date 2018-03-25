@@ -42,15 +42,15 @@ public class Author {
 
     @Override
     public String toString() {
-//        StringBuilder sb = new StringBuilder();
-//        for (Book book: books) {
-//            sb.append(book.getTitle() + " ");
-//        }
+        StringBuilder sb = new StringBuilder();
+        for (Book book: books) {
+            sb.append(book.getTitle() + " ");
+        }
 
         return "Author{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", books=" + books +
+                ", books=" + sb.toString() +
                 '}';
     }
 }

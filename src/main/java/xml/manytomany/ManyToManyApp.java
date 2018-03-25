@@ -10,9 +10,10 @@ public class ManyToManyApp {
         EntityDAOImpl<Book> bookDAO = new EntityDAOImpl<Book>(Book.class);
         EntityDAOImpl<Author> authorDAO = new EntityDAOImpl<Author>(Author.class);
 
-        Author a1 = authorDAO.getById(2L);
-
-        System.out.println(a1.getBooks());
+//        Author a1 = authorDAO.getById(2L);
+//
+//        System.out.println(a1.getBooks());
+//
 
     }
 }
